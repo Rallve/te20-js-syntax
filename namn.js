@@ -6,14 +6,17 @@ button.addEventListener('click', () => {
     const name = input.value;
     const ul = document.createElement('ul');
     const letters = [];
+    const li = document.createElement('li');
+    li.setAttribute(
+        'style',
+        'list-style-type: none'
+    );
     for (let i = 0; i < name.length; i++) {
         letters[i] = name.charAt(i);
     }
     for (let i = name.length - 1; i > -1; i--) {
-        const li = document.createElement('li');
-        li.textContent = letters[i];
-        ul.appendChild(li);
+        li.textContent += letters[i];
     }
-    const li = document.createElement('li');
+    ul.appendChild(li);
     messageBox.appendChild(ul);
 });
